@@ -13,7 +13,12 @@ public class Main extends PApplet {
 
 	Controller controller;
 	PImage PANTALLA;
-
+	PImage BULLDOG;
+	PImage HUSKY;
+	PImage LABRADOR;
+	PImage PASTOR;
+	PImage ROTTWEILER;
+	
 
 	@Override
 	public void settings() {
@@ -27,6 +32,12 @@ public class Main extends PApplet {
 
 		// img pantalla
 		PANTALLA = loadImage("data/IMG/PELUDOS.png");
+		//imgs perros
+		BULLDOG = loadImage("data/IMG/BULLDOG.png");
+		HUSKY = loadImage("data/IMG/HUSKY.png");
+		LABRADOR = loadImage("data/IMG/LABRADOR.png");
+		PASTOR = loadImage("data/IMG/PASTOR.png");
+		ROTTWEILER = loadImage("data/IMG/ROTTWEILER.png");
 	
 	}
 
@@ -40,6 +51,13 @@ public class Main extends PApplet {
 
 		// System.out.println(mouseX + "," + mouseY);
 
+	}
+	
+	//metodo para pintar las imagenes de los perros
+	public void img() {
+		
+		
+		
 	}
 	
 	@Override
