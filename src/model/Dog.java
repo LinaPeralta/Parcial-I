@@ -4,10 +4,10 @@ import processing.core.PApplet;
 
 public class Dog  implements Comparable <Dog>{
 	
+	private PApplet app;
+
 	public Dog (PApplet app, String Id, String Name, String Date, String Breed) {
-		
-		
-		
+		this.app=app;
 	}
 	
 	public void draw() {

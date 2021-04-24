@@ -37,8 +37,6 @@ public class Main extends PApplet {
 		imageMode(CORNER);
 		image(PANTALLA, 0, 0);
 		
-		
-		
 
 		// System.out.println(mouseX + "," + mouseY);
 

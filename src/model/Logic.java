@@ -16,11 +16,21 @@ public class Logic {
 	
 	String [] text1;
 	String [] text2;
+	String [] ArrayId;
 
 	public Logic(PApplet app) {
 		this.app = app;
 		dog = new Dog(app, Id, Name, Date, Breed);
+		
+		//cargar txt
+		
+		text1 = app.loadStrings("./data/imports/Text1.txt");
+		text2 = app.loadStrings("./data/imports/Text2.txt");
 
+	}
+	
+	public void split () {
+		//ArrayId = app.split(text1[], " ");
 	}
 
 	public void draw() {
