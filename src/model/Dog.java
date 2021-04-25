@@ -22,9 +22,16 @@ public class Dog  implements Comparable <Dog>{
 		this.Id=Id;
 		this.Name=Name;
 		
+		
+		//arraylist
+		
+		list  = new ArrayList<>();
+		
+		//add variables
 		list.add(Id);
 		list.add(Name);
 		
+		//posicion inicial en x
 		x = 113;
 		//y = 263;
 		
@@ -33,9 +40,8 @@ public class Dog  implements Comparable <Dog>{
 	public void draw(int y) {
 		
 		for (int i = 0; i < list.size(); i++) {
-			x =+ 80;
-			
-			app.text(list.get(i), x, y);
+			app.textSize(15);
+			app.text(list.get(i), (i*80)+x, y);
 			
 		}
 		
@@ -44,8 +50,9 @@ public class Dog  implements Comparable <Dog>{
 	}
 
 	@Override
-	public int compareTo(Dog arg0) {
+	public int compareTo(Dog newDog) {
 		return 0;
+//		return this.Id.compareTo(newDog.ge());
 	}
 	
 	

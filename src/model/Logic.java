@@ -14,6 +14,7 @@ public class Logic {
 	Dog dog;
 	private PApplet app;
 	int a;
+	int y;
 
 	// listOfDog
 
@@ -21,6 +22,7 @@ public class Logic {
 	String[] text2;
 	private ArrayList<String> variables1;
 	private ArrayList<String> variables2;
+	private ArrayList<Dog> dogsList;
 	private ArrayList<String> id;
 	private ArrayList<String> name;
 
@@ -28,11 +30,22 @@ public class Logic {
 		this.app = app;
 		dog = new Dog(app, Id, Name);
 
+		
+		//arraylist
+		variables1 = new ArrayList<>();
+		variables2 = new ArrayList<>();
+		dogsList = new ArrayList<>();
+		id = new ArrayList<>();
+		name = new ArrayList<>();
+		
+		
+		
 		// cargar txt
 
 		text1 = app.loadStrings("./data/imports/Text1.txt");
 		text2 = app.loadStrings("./data/imports/Text2.txt");
 
+		y =263;
 	}
 
 	public void split() {
@@ -71,6 +84,11 @@ public class Logic {
 	}
 
 	public void draw() {
+		
+		for (int i = 0; i < dogsList.size(); i++) {
+			
+			dogsList.get(i).draw((i*50)+y);
+		}
 
 	}
 
