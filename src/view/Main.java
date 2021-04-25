@@ -64,6 +64,21 @@ public class Main extends PApplet {
 		image(PANTALLA, 0, 0);
 
 		img();
+		
+		//titulos 
+		
+		
+		fill (128,0,59);
+		text("ID", 107, 230);
+		text("NOMBRE", 200, 230);
+		text("RAZA", 387, 230);
+		text("FECHA", 647, 230);
+		
+		
+		
+		
+		
+		
 		//controller.sortList();
 		
 		//llamar draw de controller

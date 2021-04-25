@@ -32,24 +32,32 @@ public class Dog  implements Comparable <Dog>{
 		list.add(Name);
 		
 		//posicion inicial en x
-		//x = 113;
+		x = 113;
 		//y = 263;
 
 		
 	}
 	
 	public void draw(int y) {
-	
-		
 		
 		for (int i = 0; i < list.size(); i++) {
 			int xt = 113;
+			app.fill(0);
 			app.textSize(15);
 			app.text(list.get(i),(i*80)+xt, y);
 		
 		}
 		
-	//	System.out.println(list);
+		
+		
+//		for (int i = 0; i < list.size(); i++) {
+//			int x =+ 80;
+//			app.textSize(15);
+//			app.text(list.get(i),x, y);
+//		
+//		}
+		
+		System.out.println(list);
 		
 		
 

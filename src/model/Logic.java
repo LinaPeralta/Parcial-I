@@ -25,32 +25,33 @@ public class Logic {
 	private ArrayList<String> variables2;
 	private ArrayList<Dog> dogsList;
 	private ArrayList<String> id;
+	private ArrayList<String> id2;
 	private ArrayList<String> name;
+	private ArrayList<String> breed;
+	private ArrayList<String> date;
 
 	public Logic(PApplet app) {
 		this.app = app;
 		dog = new Dog(app, Id, Name);
 
-		
-		//arraylist
+		// arraylist
 		variables1 = new ArrayList<>();
 		variables2 = new ArrayList<>();
 		dogsList = new ArrayList<>();
 		id = new ArrayList<>();
+		id2 = new ArrayList<>();
 		name = new ArrayList<>();
-		
+		breed = new ArrayList<>();
+		date = new ArrayList<>();
 
-		
-		
 		// cargar txt
 
 		text1 = app.loadStrings("./data/imports/Text1.txt");
 		text2 = app.loadStrings("./data/imports/Text2.txt");
 
-		//y =263;
-		
-		
-		split ();
+		y = 263;
+
+		split();
 		createDog();
 	}
 
@@ -64,13 +65,14 @@ public class Logic {
 			}
 		}
 
+		// asignar los valores a sus respectivos arraylist
 		for (int i = 0; i < variables1.size(); i++) {
-			// String word = variables1.get(i);
 
 			if (i % 2 == 0) {
 				id.add(variables1.get(i));
 			} else {
 				name.add(variables1.get(i));
+
 			}
 		}
 
@@ -81,35 +83,42 @@ public class Logic {
 			for (int j = 0; j < variables.length; j++) {
 				variables2.add(variables[j]);
 			}
-			
-			
-			
+
+			// asignar los valores a sus respectivos arraylist
+			for (int k = 0; i < variables2.size(); i++) {
+
+				if (i % 2 == 0) {
+					id2.add(variables2.get(i));
+				} else {
+					breed.add(variables2.get(i));
+				}
+			}
+
 		}
 
-		//System.out.println(variables1);
+		// System.out.println(variables1);
 	}
-	
-	public void createDog () {
-		
+
+	public void createDog() {
+
 		for (int i = 0; i < 5; i++) {
-		
-			
-			dogsList.add(new Dog(app,id.get(i),name.get(i)));
-			
+
+			dogsList.add(new Dog(app, id.get(i), name.get(i)));
+
 		}
 	}
 
 	public void draw() {
-		
+
 		for (int i = 0; i < dogsList.size(); i++) {
 			int yt = 263;
-	        
-			dogsList.get(i).draw((i*50)+yt);
+
+			dogsList.get(i).draw((i * 50) + yt);
 		}
-		
-		//draw de Dog
-		
-        dog.draw(y);
+
+		// draw de Dog
+
+		dog.draw(y);
 
 	}
 
@@ -126,18 +135,17 @@ public class Logic {
 
 			System.out.println("ordenar por nombre");
 			break;
-			
+
 		case 'b':
 
 			System.out.println("ordenar por raza");
 			break;
-			
+
 		case 'd':
 
 			System.out.println("ordenar por fecha");
 			break;
 		}
-		
 
 	}
 
