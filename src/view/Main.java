@@ -66,26 +66,17 @@ public class Main extends PApplet {
 		img();
 		
 		//titulos 
-		
-		
 		fill (128,0,59);
 		text("ID", 107, 230);
-		text("NOMBRE", 200, 230);
-		text("RAZA", 387, 230);
-		text("FECHA", 647, 230);
+		text("NOMBRE", 315, 230);
+		text("RAZA", 550, 230);
+		text("FECHA", 733, 230);
 		
-		
-		
-		
-		
-		
-		//controller.sortList();
 		
 		//llamar draw de controller
-		
 		controller.controllerDraw();
 
-		// System.out.println(mouseX + "," + mouseY);
+		 //System.out.println(mouseX + "," + mouseY);
 
 	}
 
@@ -94,27 +85,27 @@ public class Main extends PApplet {
 
 		// img PASTOR
 		imageMode(CORNER);
-		image(PASTOR, x, y1);
+		image(PASTOR, x, y2);
 		PASTOR.resize(50, 40);
 
 		// img bulldog
 		imageMode(CORNER);
-		image(BULLDOG, x, y2);
+		image(BULLDOG, x, y3);
 		BULLDOG.resize(50, 40);
 
 		// img LABRADOR
 		imageMode(CORNER);
-		image(LABRADOR, x, y3);
+		image(LABRADOR, x, y1);
 		LABRADOR.resize(50, 40);
 
 		// img HUSKY
 		imageMode(CORNER);
-		image(HUSKY, x, y4);
+		image(HUSKY, x, y5);
 		HUSKY.resize(50, 40);
 
 		// img ROTTWEILER
 		imageMode(CORNER);
-		image(ROTTWEILER, x, y5);
+		image(ROTTWEILER, x, y4);
 		ROTTWEILER.resize(50, 40);
 
 	}
@@ -122,7 +113,7 @@ public class Main extends PApplet {
 	@Override
 	public void keyPressed() {
 
-		
+		controller.sortList();
 
 	}
 

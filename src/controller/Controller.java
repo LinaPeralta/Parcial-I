@@ -22,10 +22,11 @@ public class Controller {
 	
 	public void sortList() {
 		
-	//	logic.split();
+     logic.sortList();
 		
 
 	}
+	
 	
 	public void saveText() {
 

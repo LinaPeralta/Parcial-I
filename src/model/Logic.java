@@ -2,6 +2,7 @@ package model;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 import processing.core.PApplet;
 
@@ -15,7 +16,6 @@ public class Logic {
 	Dog dog;
 	private PApplet app;
 	int a;
-	int x;
 	int y;
 
 	// listOfDog
@@ -26,21 +26,24 @@ public class Logic {
 	private ArrayList<String> variables2;
 	private ArrayList<Dog> dogsList;
 	private ArrayList<String> id;
-	private ArrayList<String> id2;
 	private ArrayList<String> name;
 	private ArrayList<String> breed;
 	private ArrayList<String> date;
+	
+	private DogName dogName;
+	private DogBreed dogBreed;
+	private DogDate dogDate;
+
 
 	public Logic(PApplet app) {
 		this.app = app;
-		dog = new Dog(app, Id, Name);
+		dog = new Dog(app, Id, Name,Breed,Date);
 
 		// arraylist
 		variables1 = new ArrayList<>();
 		variables2 = new ArrayList<>();
 		dogsList = new ArrayList<>();
 		id = new ArrayList<>();
-		id2 = new ArrayList<>();
 		name = new ArrayList<>();
 		breed = new ArrayList<>();
 		date = new ArrayList<>();
@@ -54,6 +57,10 @@ public class Logic {
 
 		split();
 		createDog();
+		
+		dogName = new DogName ();
+		dogBreed= new DogBreed ();
+		dogDate = new DogDate ();
 	}
 
 	public void split() {
@@ -88,6 +95,7 @@ public class Logic {
 			for (int j = 0; j < variables.length; j++) {
 				variables2.add(variables[j]);
 			}
+		}
 			
 			
 			//remover ID del txt2
@@ -108,10 +116,10 @@ public class Logic {
 				}
 			}
 
-		}
 
-		//System.out.println(breed);
-	//	System.out.println(date);
+
+		System.out.println(breed);
+		System.out.println(date);
 	
 	}
 
@@ -119,8 +127,8 @@ public class Logic {
 
 		for (int i = 0; i < 5; i++) {
 
-  //    	dogsList.add(new Dog(app, id.get(i), name.get(i),breed.get(i), date.get(i)));
-    	dogsList.add(new Dog(app, id.get(i), name.get(i)));
+    	dogsList.add(new Dog(app, id.get(i), name.get(i),breed.get(i), date.get(i)));
+    //	dogsList.add(new Dog(app, id.get(i), name.get(i)));
 
 		}
 	}
@@ -132,8 +140,10 @@ public class Logic {
 
 			dogsList.get(i).draw((i * 50) + yt);
 		}
+		
+		
 
-		// draw de Dog
+		// draw the Dog
 
 		dog.draw(y);
 
@@ -144,21 +154,25 @@ public class Logic {
 		switch (a) {
 
 		case 'i':
-
+			Collections.sort(id);
+	
 			System.out.println("ordenar por ID");
 			break;
 
 		case 'n':
-
+			//Collections.sort(id,dogName);
+			
 			System.out.println("ordenar por nombre");
 			break;
 
 		case 'b':
-
+			Collections.sort(breed);
+			
 			System.out.println("ordenar por raza");
 			break;
 
 		case 'd':
+			Collections.sort(date);
 
 			System.out.println("ordenar por fecha");
 			break;

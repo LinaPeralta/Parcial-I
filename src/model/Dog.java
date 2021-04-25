@@ -13,17 +13,17 @@ public class Dog  implements Comparable <Dog>{
 	private String Breed;
 	private ArrayList<String> list;
 	int x;
-	//int y;
+	
+	
 	
 
 
-	public Dog (PApplet app, String Id, String Name) {
+	public Dog (PApplet app, String Id, String Name,String Breed, String Date) {
 		this.app=app;
 		this.Id=Id;
 		this.Name=Name;
 		this.Breed=Breed;
 		this.Date=Date;
-		
 		
 		//arraylist
 		
@@ -32,10 +32,13 @@ public class Dog  implements Comparable <Dog>{
 		//add variables
 		list.add(Id);
 		list.add(Name);
+		list.add(Breed);
+		list.add(Date);
 		
 		//posicion inicial en x
 		x = 113;
-		//y = 263;
+		
+
 
 		
 	}
@@ -46,31 +49,19 @@ public class Dog  implements Comparable <Dog>{
 			int xt = 113;
 			app.fill(0);
 			app.textSize(15);
-			app.text(list.get(i),(i*80)+xt, y);
-			
-		
+			app.text(list.get(i),(i*200)+xt, y);		
 		}
 		
-		
-		
-//		for (int i = 0; i < list.size(); i++) {
-//			int x =+ 80;
-//			app.textSize(15);
-//			app.text(list.get(i),x, y);
-//		
-//		}
-		
 		//System.out.println(list);
-		
-		
 
 
 	}
 
 	@Override
-	public int compareTo(Dog newDog) {
-		return 0;
-//		return this.Id.compareTo(newDog.ge());
+	public int compareTo(Dog nextDog) {
+		//return 0;
+	return this.Id.compareTo(nextDog.getId());
+	
 	}
 
 
@@ -156,6 +147,7 @@ public class Dog  implements Comparable <Dog>{
 	public void setX(int x) {
 		this.x = x;
 	}
+	
 	
 	
 	
