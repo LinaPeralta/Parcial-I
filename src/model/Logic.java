@@ -18,8 +18,6 @@ public class Logic {
 	int a;
 	int y;
 
-	// listOfDog
-
 	String[] text1;
 	String[] text2;
 	private ArrayList<String> variables1;
@@ -97,7 +95,6 @@ public class Logic {
 			}
 		}
 			
-			
 			//remover ID del txt2
 			variables2.remove("1");
 			variables2.remove("2");
@@ -116,8 +113,6 @@ public class Logic {
 				}
 			}
 
-
-
 		System.out.println(breed);
 		System.out.println(date);
 	
@@ -128,8 +123,6 @@ public class Logic {
 		for (int i = 0; i < 5; i++) {
 
     	dogsList.add(new Dog(app, id.get(i), name.get(i),breed.get(i), date.get(i)));
-    //	dogsList.add(new Dog(app, id.get(i), name.get(i)));
-
 		}
 	}
 
@@ -140,11 +133,8 @@ public class Logic {
 
 			dogsList.get(i).draw((i * 50) + yt);
 		}
-		
-		
 
 		// draw the Dog
-
 		dog.draw(y);
 
 	}
@@ -154,25 +144,25 @@ public class Logic {
 		switch (a) {
 
 		case 'i':
-			Collections.sort(id);
+			Collections.sort(dogsList);
 	
 			System.out.println("ordenar por ID");
 			break;
 
 		case 'n':
-			//Collections.sort(id,dogName);
+			Collections.sort(dogsList,dogName);
 			
 			System.out.println("ordenar por nombre");
 			break;
 
 		case 'b':
-			Collections.sort(breed);
+			Collections.sort(dogsList,dogBreed);
 			
 			System.out.println("ordenar por raza");
 			break;
 
 		case 'd':
-			Collections.sort(date);
+			Collections.sort(dogsList,dogDate);
 
 			System.out.println("ordenar por fecha");
 			break;

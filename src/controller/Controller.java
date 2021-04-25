@@ -16,7 +16,7 @@ public class Controller {
 	
 	public void controllerDraw () {
 		
-		logic.draw();
+	logic.draw();
 		
 	}
 	

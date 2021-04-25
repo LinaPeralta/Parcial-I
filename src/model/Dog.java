@@ -37,10 +37,7 @@ public class Dog  implements Comparable <Dog>{
 		
 		//posicion inicial en x
 		x = 113;
-		
-
-
-		
+				
 	}
 	
 	public void draw(int y) {
@@ -148,10 +145,6 @@ public class Dog  implements Comparable <Dog>{
 		this.x = x;
 	}
 	
-	
-	
-	
-	
-	
+
 
 }
