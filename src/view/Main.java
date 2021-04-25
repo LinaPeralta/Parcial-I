@@ -85,7 +85,7 @@ public class Main extends PApplet {
 		
 		controller.controllerDraw();
 
-		 System.out.println(mouseX + "," + mouseY);
+		// System.out.println(mouseX + "," + mouseY);
 
 	}
 

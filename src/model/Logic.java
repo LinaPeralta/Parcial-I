@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import processing.core.PApplet;
 
@@ -8,8 +9,8 @@ public class Logic {
 
 	String Id = "1";
 	String Name = "Martina";
-	String Date;
-	String Breed;
+	String Date = "Labrador-retriever";
+	String Breed = "11-04-2019";
 
 	Dog dog;
 	private PApplet app;
@@ -77,33 +78,49 @@ public class Logic {
 		}
 
 		// pasar el txt2 a variables (en un arraylist)
+		
+		//ordenar los datos en el array
+		Arrays.sort(text2);
 
+		//split del array
 		for (int i = 0; i < text2.length; i++) {
 			String[] variables = app.split(text2[i], " ");
 			for (int j = 0; j < variables.length; j++) {
 				variables2.add(variables[j]);
 			}
+			
+			
+			//remover ID del txt2
+			variables2.remove("1");
+			variables2.remove("2");
+			variables2.remove("3");
+			variables2.remove("4");
+			variables2.remove("5");
+			
 
 			// asignar los valores a sus respectivos arraylist
-			for (int k = 0; i < variables2.size(); i++) {
+			for (int k = 0; k < variables2.size(); k++) {
 
-				if (i % 2 == 0) {
-					id2.add(variables2.get(i));
+				if (k % 2 == 0) {
+					breed.add(variables2.get(k));
 				} else {
-					breed.add(variables2.get(i));
+					date.add(variables2.get(k));
 				}
 			}
 
 		}
 
-		// System.out.println(variables1);
+		//System.out.println(breed);
+	//	System.out.println(date);
+	
 	}
 
 	public void createDog() {
 
 		for (int i = 0; i < 5; i++) {
 
-			dogsList.add(new Dog(app, id.get(i), name.get(i)));
+  //    	dogsList.add(new Dog(app, id.get(i), name.get(i),breed.get(i), date.get(i)));
+    	dogsList.add(new Dog(app, id.get(i), name.get(i)));
 
 		}
 	}

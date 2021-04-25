@@ -21,6 +21,8 @@ public class Dog  implements Comparable <Dog>{
 		this.app=app;
 		this.Id=Id;
 		this.Name=Name;
+		this.Breed=Breed;
+		this.Date=Date;
 		
 		
 		//arraylist
@@ -45,6 +47,7 @@ public class Dog  implements Comparable <Dog>{
 			app.fill(0);
 			app.textSize(15);
 			app.text(list.get(i),(i*80)+xt, y);
+			
 		
 		}
 		
@@ -57,7 +60,7 @@ public class Dog  implements Comparable <Dog>{
 //		
 //		}
 		
-		System.out.println(list);
+		//System.out.println(list);
 		
 		
 
