@@ -13,13 +13,12 @@ public class Logic {
 
 	Dog dog;
 	private PApplet app;
+	int a;
 
 	// listOfDog
 
 	String[] text1;
 	String[] text2;
-	private ArrayList<String> texto1;
-	private ArrayList<String> texto2;
 	private ArrayList<String> variables1;
 	private ArrayList<String> variables2;
 	private ArrayList<String> id;
@@ -27,7 +26,7 @@ public class Logic {
 
 	public Logic(PApplet app) {
 		this.app = app;
-		dog = new Dog(app, Id, Name, Date, Breed);
+		dog = new Dog(app, Id, Name);
 
 		// cargar txt
 
@@ -45,34 +44,61 @@ public class Logic {
 				variables1.add(variables[j]);
 			}
 		}
-		
+
 		for (int i = 0; i < variables1.size(); i++) {
-			//String word = variables1.get(i);
-			
-			if (i%2 == 0) {
-				id.add(variables1.get(i));	
+			// String word = variables1.get(i);
+
+			if (i % 2 == 0) {
+				id.add(variables1.get(i));
 			} else {
-				name.add(variables1.get(i));	
-			}		
+				name.add(variables1.get(i));
+			}
 		}
-		
-		
-		//pasar el txt2 a variables (en un arraylist)
-		
+
+		// pasar el txt2 a variables (en un arraylist)
+
 		for (int i = 0; i < text2.length; i++) {
 			String[] variables = app.split(text2[i], " ");
 			for (int j = 0; j < variables.length; j++) {
 				variables2.add(variables[j]);
 			}
+			
+			
+			
 		}
-	}
 
+		//System.out.println(variables1);
+	}
 
 	public void draw() {
 
 	}
 
 	public void sortList() {
+
+		switch (a) {
+
+		case 'i':
+
+			System.out.println("ordenar por ID");
+			break;
+
+		case 'n':
+
+			System.out.println("ordenar por nombre");
+			break;
+			
+		case 'b':
+
+			System.out.println("ordenar por raza");
+			break;
+			
+		case 'd':
+
+			System.out.println("ordenar por fecha");
+			break;
+		}
+		
 
 	}
 
