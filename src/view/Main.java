@@ -53,6 +53,7 @@ public class Main extends PApplet {
 		y3 = 348;
 		y4 = 398;
 		y5 = 448;
+		
 
 	}
 
@@ -83,6 +84,7 @@ public class Main extends PApplet {
 	// metodo para pintar las imagenes de los perros
 	public void img() {
 
+		
 		// img PASTOR
 		imageMode(CORNER);
 		image(PASTOR, x, y2);
@@ -113,7 +115,7 @@ public class Main extends PApplet {
 	@Override
 	public void keyPressed() {
 
-		controller.sortList();
+		controller.sortList(key);
 
 	}
 

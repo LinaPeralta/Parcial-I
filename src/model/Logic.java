@@ -7,6 +7,7 @@ import java.util.Collections;
 import processing.core.PApplet;
 
 public class Logic {
+	
 
 	String Id = "1";
 	String Name = "Martina";
@@ -15,7 +16,6 @@ public class Logic {
 
 	Dog dog;
 	private PApplet app;
-	int a;
 	int y;
 
 	String[] text1;
@@ -27,15 +27,19 @@ public class Logic {
 	private ArrayList<String> name;
 	private ArrayList<String> breed;
 	private ArrayList<String> date;
-	
+
 	private DogName dogName;
 	private DogBreed dogBreed;
 	private DogDate dogDate;
 
+	private String[] sID;
+	private String[] sName;
+	private String[] sBreed;
+	private String[] sDate;
 
 	public Logic(PApplet app) {
 		this.app = app;
-		dog = new Dog(app, Id, Name,Breed,Date);
+		dog = new Dog(app, Id, Name, Breed, Date);
 
 		// arraylist
 		variables1 = new ArrayList<>();
@@ -55,10 +59,15 @@ public class Logic {
 
 		split();
 		createDog();
-		
-		dogName = new DogName ();
-		dogBreed= new DogBreed ();
-		dogDate = new DogDate ();
+
+		dogName = new DogName();
+		dogBreed = new DogBreed();
+		dogDate = new DogDate();
+
+		sID = new String[5];
+		sName = new String[5];
+		sBreed = new String[5];
+		sDate = new String[5];
 	}
 
 	public void split() {
@@ -83,46 +92,45 @@ public class Logic {
 		}
 
 		// pasar el txt2 a variables (en un arraylist)
-		
-		//ordenar los datos en el array
+
+		// ordenar los datos en el array
 		Arrays.sort(text2);
 
-		//split del array
+		// split del array
 		for (int i = 0; i < text2.length; i++) {
 			String[] variables = app.split(text2[i], " ");
 			for (int j = 0; j < variables.length; j++) {
 				variables2.add(variables[j]);
 			}
 		}
-			
-			//remover ID del txt2
-			variables2.remove("1");
-			variables2.remove("2");
-			variables2.remove("3");
-			variables2.remove("4");
-			variables2.remove("5");
-			
 
-			// asignar los valores a sus respectivos arraylist
-			for (int k = 0; k < variables2.size(); k++) {
+		// remover ID del txt2
+		variables2.remove("1");
+		variables2.remove("2");
+		variables2.remove("3");
+		variables2.remove("4");
+		variables2.remove("5");
 
-				if (k % 2 == 0) {
-					breed.add(variables2.get(k));
-				} else {
-					date.add(variables2.get(k));
-				}
+		// asignar los valores a sus respectivos arraylist
+		for (int k = 0; k < variables2.size(); k++) {
+
+			if (k % 2 == 0) {
+				breed.add(variables2.get(k));
+			} else {
+				date.add(variables2.get(k));
 			}
+		}
 
-		System.out.println(breed);
-		System.out.println(date);
-	
+	//	System.out.println(breed);
+	//	System.out.println(date);
+
 	}
 
 	public void createDog() {
 
 		for (int i = 0; i < 5; i++) {
 
-    	dogsList.add(new Dog(app, id.get(i), name.get(i),breed.get(i), date.get(i)));
+			dogsList.add(new Dog(app, id.get(i), name.get(i), breed.get(i), date.get(i)));
 		}
 	}
 
@@ -135,43 +143,114 @@ public class Logic {
 		}
 
 		// draw the Dog
-		dog.draw(y);
+		dog.draw(0);
 
 	}
 
-	public void sortList() {
+	public void sortList(char a) {
 
 		switch (a) {
 
 		case 'i':
+
 			Collections.sort(dogsList);
-	
+
 			System.out.println("ordenar por ID");
+
+			for (int i = 0; i < dogsList.size(); i++) {
+				
+				String id = dogsList.get(i).getId();
+
+				String name = dogsList.get(i).getName().toLowerCase();
+
+				String breed = dogsList.get(i).getBreed().toLowerCase();
+
+				String date = dogsList.get(i).getDate();
+
+				String values = id + " " + name + " " + breed + " " + date;
+
+				sID[i] = values;
+
+				app.saveStrings("./data/exports/TextID.txt", sID);
+
+			}
+
 			break;
 
 		case 'n':
-			Collections.sort(dogsList,dogName);
-			
+			Collections.sort(dogsList, dogName);
+
 			System.out.println("ordenar por nombre");
+
+			for (int i = 0; i < dogsList.size(); i++) {
+				
+				String id = dogsList.get(i).getId();
+
+				String name = dogsList.get(i).getName().toLowerCase();
+
+				String breed = dogsList.get(i).getBreed().toLowerCase();
+
+				String date = dogsList.get(i).getDate();
+
+				String values = id + " " + name + " " + breed + " " + date;
+
+				sName[i] = values;
+
+				app.saveStrings("./data/exports/TextNames.txt", sName);
+
+			}
 			break;
 
 		case 'b':
-			Collections.sort(dogsList,dogBreed);
-			
+			Collections.sort(dogsList, dogBreed);
+
 			System.out.println("ordenar por raza");
+
+			for (int i = 0; i < dogsList.size(); i++) {
+
+				String id = dogsList.get(i).getId();
+
+				String name = dogsList.get(i).getName().toLowerCase();
+
+				String breed = dogsList.get(i).getBreed().toLowerCase();
+
+				String date = dogsList.get(i).getDate();
+
+				String values = id + " " + name + " " + breed + " " + date;
+
+				sBreed[i] = values;
+
+				app.saveStrings("./data/exports/TextBreed.txt", sBreed);
+
+			}
 			break;
 
 		case 'd':
-			Collections.sort(dogsList,dogDate);
+			Collections.sort(dogsList, dogDate);
 
 			System.out.println("ordenar por fecha");
+
+			for (int i = 0; i < dogsList.size(); i++) {
+				
+				String id = dogsList.get(i).getId();
+
+				String name = dogsList.get(i).getName().toLowerCase();
+
+				String breed = dogsList.get(i).getBreed().toLowerCase();
+
+				String date = dogsList.get(i).getDate();
+
+				String values = id + " " + name + " " + breed + " " + date;
+
+				sDate[i] = values;
+
+				app.saveStrings("./data/exports/TextDates.txt", sDate);
+
+			}
 			break;
 		}
 
 	}
 
-	public void saveText() {
-
-	}
 
 }
