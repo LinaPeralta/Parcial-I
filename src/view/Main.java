@@ -65,6 +65,10 @@ public class Main extends PApplet {
 
 		img();
 		//controller.sortList();
+		
+		//llamar draw de controller
+		
+		controller.controllerDraw();
 
 		 System.out.println(mouseX + "," + mouseY);
 

@@ -6,14 +6,15 @@ import processing.core.PApplet;
 
 public class Logic {
 
-	String Id;
-	String Name;
+	String Id = "1";
+	String Name = "Martina";
 	String Date;
 	String Breed;
 
 	Dog dog;
 	private PApplet app;
 	int a;
+	int x;
 	int y;
 
 	// listOfDog
@@ -38,6 +39,7 @@ public class Logic {
 		id = new ArrayList<>();
 		name = new ArrayList<>();
 		
+
 		
 		
 		// cargar txt
@@ -45,7 +47,11 @@ public class Logic {
 		text1 = app.loadStrings("./data/imports/Text1.txt");
 		text2 = app.loadStrings("./data/imports/Text2.txt");
 
-		y =263;
+		//y =263;
+		
+		
+		split ();
+		createDog();
 	}
 
 	public void split() {
@@ -82,13 +88,28 @@ public class Logic {
 
 		//System.out.println(variables1);
 	}
+	
+	public void createDog () {
+		
+		for (int i = 0; i < 5; i++) {
+		
+			
+			dogsList.add(new Dog(app,id.get(i),name.get(i)));
+			
+		}
+	}
 
 	public void draw() {
 		
 		for (int i = 0; i < dogsList.size(); i++) {
-			
-			dogsList.get(i).draw((i*50)+y);
+			int yt = 263;
+	        
+			dogsList.get(i).draw((i*50)+yt);
 		}
+		
+		//draw de Dog
+		
+        dog.draw(y);
 
 	}
 

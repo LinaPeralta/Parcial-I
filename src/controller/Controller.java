@@ -14,9 +14,16 @@ public class Controller {
 		
 	}
 	
+	public void controllerDraw () {
+		
+		logic.draw();
+		
+	}
+	
 	public void sortList() {
 		
 	//	logic.split();
+		
 
 	}
 	
